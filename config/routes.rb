@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+
   root             'static_pages#home'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
-
+  resources :entries,         only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
+  # Example resource route (maps HTTP verbs to controller actionsf automatically):
   #   resources :products
 
   # Example resource route with options:
